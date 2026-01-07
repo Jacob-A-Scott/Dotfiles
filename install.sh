@@ -6,7 +6,7 @@ if ! command -v stow &> /dev/null; then
     sudo dnf install -y stow
 fi
 
-cd ~/dotfiles
+cd ~/Dotfiles
 
 # Stow all packages
 for dir in */; do
