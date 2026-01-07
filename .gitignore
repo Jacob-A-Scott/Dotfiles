@@ -1,0 +1,4 @@
+# Ignore any backup files
+*.bak
+*~
+.DS_Store

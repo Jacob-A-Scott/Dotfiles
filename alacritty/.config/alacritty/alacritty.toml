@@ -1,0 +1,150 @@
+# Alacritty Configuration - Iosevka Nerd Font + Gruvbox Dark
+# For Fedora 43 KDE
+
+# Window settings
+[window]
+padding.x = 4
+padding.y = 4
+decorations = "full"
+opacity = 1.0
+dynamic_title = true
+dimensions = { columns=180, lines=60 }
+
+# Scrolling
+[scrolling]
+history = 10000
+multiplier = 3
+
+# Font configuration
+[font]
+size = 12.0
+builtin_box_drawing = true
+
+[font.normal]
+family = "Iosevka Nerd Font"
+style = "Medium"
+
+[font.bold]
+family = "Iosevka Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "Iosevka Nerd Font"
+style = "Medium Italic"
+
+[font.bold_italic]
+family = "Iosevka Nerd Font"
+style = "Bold Italic"
+
+# Font rendering settings
+[font.offset]
+x = 0
+y = 0
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+# Gruvbox Dark color scheme
+[colors.primary]
+background = "#1D2021"
+foreground = "#ebdbb2"
+
+[colors.cursor]
+text = "#1D2021"
+cursor = "#ebdbb2"
+
+[colors.vi_mode_cursor]
+text = "#1D2021"
+cursor = "#ebdbb2"
+
+[colors.selection]
+text = "CellForeground"
+background = "#504945"
+
+# Normal colors
+[colors.normal]
+black = "#1D2021"
+red = "#cc241d"
+green = "#98971a"
+yellow = "#d79921"
+blue = "#458588"
+magenta = "#b16286"
+cyan = "#689d6a"
+white = "#a89984"
+
+# Bright colors
+[colors.bright]
+black = "#928374"
+red = "#fb4934"
+green = "#b8bb26"
+yellow = "#fabd2f"
+blue = "#83a598"
+magenta = "#d3869b"
+cyan = "#8ec07c"
+white = "#ebdbb2"
+
+# Dim colors (optional for Gruvbox)
+[colors.dim]
+black = "#32302f"
+red = "#9d0006"
+green = "#79740e"
+yellow = "#b57614"
+blue = "#076678"
+magenta = "#8f3f71"
+cyan = "#427b58"
+white = "#928374"
+
+# Cursor
+[cursor.style]
+shape = "Block"
+blinking = "Off"
+
+[cursor]
+unfocused_hollow = true
+
+# Shell
+[terminal.shell]
+program = "/bin/bash"
+args = ["-l"]
+
+# Bell
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+color = "#ffffff"
+
+# Mouse bindings
+[mouse]
+hide_when_typing = false
+
+# Key bindings
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "Plus"
+mods = "Control"
+action = "IncreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Minus"
+mods = "Control"
+action = "DecreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Control"
+action = "ResetFontSize"
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Control|Shift"
+action = "SpawnNewInstance"
