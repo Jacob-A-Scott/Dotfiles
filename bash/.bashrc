@@ -1,5 +1,9 @@
 # .bashrc
 
+# =============================================================================
+# GENERAL CONFIGS
+# =============================================================================
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
   . /etc/bashrc
@@ -14,7 +18,7 @@ export PATH
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
-# User specific aliases and functions
+# Sources additional bash configuration files from a ~/.bashrc.d/ directory if it exists
 if [ -d ~/.bashrc.d ]; then
   for rc in ~/.bashrc.d/*; do
     if [ -f "$rc" ]; then
@@ -24,9 +28,26 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-#######################################################################################
-## Data Science Configs                                                              ##
-#######################################################################################
+# -----------------------------------------------------------------------------
+# QoL Aliases
+# -----------------------------------------------------------------------------
+
+# Dotfiles and home navigation
+alias cdd='cd ~/Dotfiles'
+alias cdh='cd ~'
+
+# WSL: Navigate to Windows user directory
+if [[ -f /proc/sys/fs/binfmt_misc/WSLInterop ]]; then
+  WIN_USER=$(cmd.exe /c "echo %USERNAME%" 2>/dev/null | tr -d '\r')
+  alias cdw="cd /mnt/c/Users/$WIN_USER"
+else
+  alias cdw='echo "cdw only works on WSL"'
+fi
+
+# =============================================================================
+# DATA SCIENCE-SPECIFIC CONFIGS
+# =============================================================================
+
 # Quick activation for common python environments
 alias ds="source ~/Projects/venvs/ds/bin/activate"
 
@@ -58,6 +79,3 @@ workon() {
     echo "Environment '$1' not found"
   fi
 }
-
-# Dotfiles management
-alias dotfiles='git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
