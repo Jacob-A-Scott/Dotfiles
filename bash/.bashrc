@@ -51,7 +51,7 @@ fi
 # =============================================================================
 
 # Quick activation for common python environments
-alias ds="source ~/Projects/venvs/ds/bin/activate"
+alias ds="source ~/Projects/_venvs/ds/bin/activate"
 
 # Function to create a new project with its own venv
 newproject() {
@@ -60,8 +60,8 @@ newproject() {
     return 1
   fi
   mkdir -p ~/Projects/"$1"
-  python3 -m venv ~/Projects/venvs/"$1"
-  source ~/Projects/venvs/"$1"/bin/activate
+  python3 -m venv ~/Projects/_venvs/"$1"
+  source ~/Projects/_venvs/"$1"/bin/activate
   pip install --upgrade pip setuptools wheel
   cd ~/Projects/"$1"
   echo "Created project '$1' with virtual environment"
@@ -71,11 +71,11 @@ newproject() {
 workon() {
   if [ -z "$1" ]; then
     echo "Available environments:"
-    ls ~/Projects/venvs/
+    ls ~/Projects/_venvs/
     return 0
   fi
-  if [ -d ~/Projects/venvs/"$1" ]; then
-    source ~/Projects/venvs/"$1"/bin/activate
+  if [ -d ~/Projects/_venvs/"$1" ]; then
+    source ~/Projects/_venvs/"$1"/bin/activate
     [ -d ~/Projects/"$1" ] && cd ~/Projects/"$1"
   else
     echo "Environment '$1' not found"
