@@ -32,9 +32,11 @@ unset rc
 # QoL Aliases
 # -----------------------------------------------------------------------------
 
-# Dotfiles and home navigation
+# Frequent directory navigation
 alias cdd='cd ~/Dotfiles'
 alias cdh='cd ~'
+alias cdp='cd ~/Projects'
+alias cdn='cd ~/Notes'
 
 # WSL: Navigate to Windows user directory
 if [[ -f /proc/sys/fs/binfmt_misc/WSLInterop ]]; then
