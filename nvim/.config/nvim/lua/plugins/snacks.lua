@@ -28,5 +28,16 @@ return {
         hl = "SnacksDashboardHeader",
       },
     },
+    picker = {
+      sources = {
+        explorer = {
+          layout = {
+            layout = {
+              width = 30,
+            },
+          },
+        },
+      },
+    },
   },
 }
